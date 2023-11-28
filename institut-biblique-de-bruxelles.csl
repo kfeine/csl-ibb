@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" page-range-format="expanded" default-locale="fr-FR">
   <info>
-    <title>IBB</title>
-    <id>http://www.zotero.org/styles/ibb</id>
+    <title>Institut Biblique de Bruxelles (Français)</title>
+    <title-short>IBB</title-short>
+    <id>http://www.zotero.org/styles/institut-biblique-de-bruxelles</id>
+    <link href="http://www.zotero.org/styles/institut-biblique-de-bruxelles" rel="self"/>
+    <link href="http://www.zotero.org/styles/triangle" rel="template"/>
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2023-11-27T04:09:29+00:00</updated>
+    <updated>2023-11-28T04:09:29+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
     <terms>
@@ -36,11 +40,6 @@
       <term name="from">URL</term>
     </terms>
   </locale>
-  <!-- INFORMATIONS -->
-  <!-- UTILISATION D'espaces insécables &#160; POUR EVITER DE MALENCONTREUX RETOURS A LA LIGNE -->
-  <!-- CODAGE &lt; POUR SIGNE INFÉRIEUR ET &gt; POUR SIGNE SUPÉRIEUR  -->
-  <!-- Fonction du type de référence : cf. http://citationstyles.org/downloads/specification-csl10-20100530.html#appendix-ii-types -->
-  <!-- /INFORMATIONS -->
   <!--_-_-_-_-_-SECTION DEFINITION DES MACROS-_-_-_-_-_-_-->
   <!-- MACRO AUTEUR, EDITEUR SCIENTIFIQUE, DIRECTEUR DE COLLECTION (POUR LES NDBP) -->
   <macro name="author">
@@ -75,31 +74,45 @@
       </else-if>
     </choose>
   </macro>
+  <!-- Lorsqu'on a déjà cité un livre, on ne répète que le nom de famille de l'auteur, -->
+  <!-- sauf s'il y a ambiguité -->
   <macro name="author-cited">
     <choose>
       <if variable="collection-editor">
         <names variable="collection-editor">
-          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=" ">
+          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
         <text term="collection-editor" form="short" prefix=" " suffix=", "/>
         <names variable="author">
-          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=" ">
+          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
       </if>
       <else-if variable="author">
-        <names variable="author">
-          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=" ">
-            <name-part name="family" font-variant="small-caps"/>
-          </name>
-        </names>
+        <choose>
+          <if disambiguate="true">
+            <names variable="author">
+              <name name-as-sort-order="all" delimiter=", " form="long" and="text" delimiter-precedes-last="never" sort-separator=", ">
+              <!-- <name form="long" and="text" delimiter-precedes-last="never" sort-separator=" "> -->
+                <name-part name="family" font-variant="small-caps"/>
+              </name>
+            </names>
+          </if>
+          <else>
+            <names variable="author">
+              <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", ">
+                <name-part name="family" font-variant="small-caps"/>
+              </name>
+            </names>
+          </else>
+        </choose>
       </else-if>
       <else-if variable="editor">
         <names variable="editor">
-          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=" ">
+          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
           <label form="short" prefix=" "/>
@@ -112,27 +125,27 @@
     <choose>
       <if variable="collection-editor">
         <names variable="collection-editor">
-          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=" ">
+          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
         <text term="collection-editor" form="short" prefix=" " suffix=", "/>
         <names variable="author">
-          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=" ">
+          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
       </if>
       <else-if variable="author">
         <names variable="author">
-          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" sort-separator=" ">
+          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
       </else-if>
       <else-if variable="editor">
         <names variable="editor">
-          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" sort-separator=" ">
+          <name name-as-sort-order="all" form="long" and="text" delimiter-precedes-last="never" sort-separator=", ">
             <name-part name="family" font-variant="small-caps"/>
           </name>
           <label form="short" prefix=" "/>
@@ -198,10 +211,6 @@
       <else-if type="thesis" match="any">
         <group>
           <text variable="title" text-case="capitalize-first" font-style="italic" suffix=","/>
-          <!-- pour le jour où il y aura un champ 'directeur' dans la fiche thèse de zotero...-->
-          <!--
-										<text term="editor" form="verb" prefix="&#160;"/><text variable="editor" suffix=",&#160;"/><text variable="genre"/> 
-										-->
         </group>
       </else-if>
       <else-if type="manuscript" match="any">
@@ -409,7 +418,6 @@
   <!-- MACRO URL (POUR LES NDBP) -->
   <!-- (Ajout d'une url pour les références...)-->
   <!-- I/ ...des notes de bas de pages-->
-  <!-- NOUVELLE MACRO 2016-->
   <macro name="internet-ndbp">
     <choose>
       <if variable="DOI">
@@ -429,7 +437,6 @@
   </macro>
   <!-- MACRO URL (POUR LA BIBLIO)-->
   <!-- II/ ...de la bibliographie-->
-  <!-- NOUVELLE MACRO 2016-->
   <macro name="internet-bib">
     <choose>
       <if variable="DOI">
@@ -478,15 +485,14 @@
         <else-if position="subsequent">
           <group delimiter=", ">
             <text macro="author-cited"/>
-            <!-- <choose> -->
-            <!--   <if type="bill book graphic legal_case motion_picture report song thesis" match="any"> -->
-            <!--     <text variable="title" form="short" font-style="italic"/> -->
-            <!--   </if> -->
-            <!--   <else> -->
-            <!--     <text variable="title" text-case="capitalize-first" form="short" prefix="«&#38;#160;" suffix="&#38;#160;»"/> -->
-            <!--   </else> -->
-            <!-- </choose> -->
-            <text term="cited" font-style="italic" suffix="."/>
+            <choose>
+              <if disambiguate="true">
+                <text variable="title" font-style="italic" form="short"/>
+              </if>
+              <else>
+                <text term="cited" font-style="italic" suffix="."/>
+              </else>
+            </choose>
             <group delimiter="&#160;">
               <label variable="locator" form="short"/>
               <text variable="locator"/>
@@ -520,7 +526,7 @@
     </layout>
   </citation>
   <!--_-_-_-_-_-SECTION DEFINITION DE LA BIBLIO (bibliography)-_-_-_-_-_-_-->
-  <bibliography hanging-indent="true">
+  <bibliography hanging-indent="true" subsequent-author-substitute="&amp;#8212;&amp;#8212;&amp;#8212;">
     <sort>
       <key macro="author" names-min="3" names-use-first="3"/>
       <key variable="issued" sort="descending"/>
