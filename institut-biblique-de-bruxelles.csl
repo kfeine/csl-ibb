@@ -79,27 +79,27 @@
     <choose>
       <if variable="collection-editor">
         <names variable="collection-editor">
-          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
+          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", " name-as-sort-order="all">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
         <text term="collection-editor" form="short" prefix=" " suffix=", "/>
         <names variable="author">
-          <name form="short" and="text" delimiter-precedes-last="never" delimiter=", " sort-separator=", ">
+          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", " name-as-sort-order="all">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
       </if>
       <else-if variable="author">
         <names variable="author">
-          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", ">
+          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", " name-as-sort-order="all">
             <name-part name="family" font-variant="small-caps"/>
           </name>
         </names>
       </else-if>
       <else-if variable="editor">
         <names variable="editor">
-          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", ">
+          <name form="short" and="text" delimiter-precedes-last="never" sort-separator=", " name-as-sort-order="all">
             <name-part name="family" font-variant="small-caps"/>
           </name>
           <label form="short" prefix=" "/>
