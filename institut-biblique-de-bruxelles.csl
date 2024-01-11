@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2023-11-28T04:09:29+00:00</updated>
+    <updated>2024-01-10T04:09:29+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -352,17 +352,19 @@
             <text variable="edition" text-case="capitalize-first" suffix="."/>
           </else>
         </choose>
+        <text macro="issue" prefix=", "/>
       </if>
       <else-if type="article-journal article-magazine article-newspaper interview webpage post-weblog" match="any">
         <group>
           <choose>
             <if variable="issued">
-              <date variable="issued">
+              <text macro="volume"/>
+              <text macro="issue" prefix=", "/>
+              <date variable="issued" prefix=", ">
                 <date-part name="day" suffix=" "/>
                 <date-part name="month" suffix=" "/>
                 <date-part name="year"/>
               </date>
-              <text macro="volume" prefix=", "/>
             </if>
             <else>
               <text macro="volume" text-case="capitalize-first"/>
@@ -371,7 +373,6 @@
         </group>
       </else-if>
     </choose>
-    <text macro="issue" prefix=", "/>
   </macro>
   <!-- MACRO VOLUME PAR TYPE DE FORMAT DU CHAMP : NUMERIQUE OU TEXTE, APPELEE SEULEMENT PAR LA MACRO EDITION-->
   <macro name="volume">
