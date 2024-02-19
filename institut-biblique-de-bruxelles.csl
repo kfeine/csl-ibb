@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2024-01-10T04:09:29+00:00</updated>
+    <updated>2024-02-19T04:09:29+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -359,8 +359,8 @@
           <choose>
             <if variable="issued">
               <text macro="volume"/>
-              <text macro="issue" prefix=", "/>
-              <date variable="issued" prefix=", ">
+              <text macro="issue" prefix=", " suffix=", "/>
+              <date variable="issued">
                 <date-part name="day" suffix=" "/>
                 <date-part name="month" suffix=" "/>
                 <date-part name="year"/>
