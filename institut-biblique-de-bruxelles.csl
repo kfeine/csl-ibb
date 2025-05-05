@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2025-05-05T04:09:49+00:00</updated>
+    <updated>2025-05-05T04:19:49+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -191,7 +191,7 @@
         <choose>
           <if is-numeric="volume">
             <group>
-              <text value="vol." prefix=", " suffix=" "/>
+              <text value="vol." prefix=", " suffix="&#160;"/>
               <text variable="volume"/>
             </group>
           </if>
