@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2024-02-19T04:09:29+00:00</updated>
+    <updated>2025-05-05T04:09:49+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -183,10 +183,22 @@
         <text variable="title" text-case="capitalize-first" font-style="italic" suffix=" [Image]"/>
       </if>
       <else-if type="report" match="any">
-        <text variable="title" text-case="capitalize-first" font-style="italic" suffix=" [Rapport]"/>
+        <!-- <text variable="title" text-case="capitalize-first" font-style="italic" suffix=" [Rapport]"/> -->
+        <text variable="title" text-case="capitalize-first" font-style="italic"/>
       </else-if>
       <else-if type="bill book legal_case song" match="any">
         <text variable="title" text-case="capitalize-first" font-style="italic"/>
+        <choose>
+          <if is-numeric="volume">
+            <group>
+              <text value="vol." prefix=", " suffix=" "/>
+              <text variable="volume"/>
+            </group>
+          </if>
+          <else>
+            <text variable="volume"/>
+          </else>
+        </choose>
       </else-if>
       <!-- AJOUT DES TYPES PAGES WEB ET BILLETS DE BLOG POUR AFFICHAGE DE LEUR TITRE ET DU TITRE DE LEUR CONTAINER-->
       <else-if type="article-journal article-newspaper article-magazine webpage post-weblog" match="any">
@@ -239,7 +251,8 @@
   <!-- MACRO DATE, VOLUME, PAGES PAR TYPE DE DOCT (POUR LES NDBP)-->
   <macro name="yearpage-ndbp">
     <choose>
-      <if type="bill book graphic legal_case motion_picture paper-conference manuscript report song thesis" match="any">
+      <!-- <if type="bill book graphic legal_case motion_picture paper-conference manuscript report song thesis" match="any"> -->
+      <if type="motion_picture paper-conference manuscript report thesis" match="any">
         <group delimiter=", ">
           <date variable="issued">
             <date-part name="year"/>
@@ -286,7 +299,7 @@
   <!-- MACRO DATE, VOLUME, PAGES PAR TYPE DE DOCT (POUR LA BIBLIO)-->
   <macro name="yearpage-bib">
     <choose>
-      <if type="bill book graphic legal_case motion_picture manuscript report song thesis" match="any">
+      <if type="graphic motion_picture manuscript report thesis" match="any">
         <group delimiter=", ">
           <date variable="issued">
             <date-part name="year"/>
