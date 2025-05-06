@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2025-05-06T00:01:00+00:00</updated>
+    <updated>2025-05-06T00:02:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -270,10 +270,10 @@
           <date variable="issued">
             <date-part name="year"/>
           </date>
-          <group delimiter="&#160;">
-            <label variable="page" form="short"/>
-            <text variable="page"/>
-          </group>
+          <!-- <group delimiter="&#38;#160;"> -->
+          <!--   <label variable="page" form="short"/> -->
+          <!--   <text variable="page"/> -->
+          <!-- </group> -->
         </group>
       </else-if>
       <else-if type="entry-dictionary entry-encyclopedia" match="any">
