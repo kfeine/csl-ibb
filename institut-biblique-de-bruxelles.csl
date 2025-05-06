@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2025-05-05T04:19:49+00:00</updated>
+    <updated>2025-05-06T00:01:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -252,7 +252,7 @@
   <macro name="yearpage-ndbp">
     <choose>
       <!-- <if type="bill book graphic legal_case motion_picture paper-conference manuscript report song thesis" match="any"> -->
-      <if type="motion_picture paper-conference manuscript report thesis" match="any">
+      <if type="book motion_picture paper-conference manuscript report thesis" match="any">
         <group delimiter=", ">
           <date variable="issued">
             <date-part name="year"/>
