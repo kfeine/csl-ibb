@@ -24,10 +24,10 @@
         <single>p.</single>
         <multiple>pp.</multiple>
       </term>
-      <term name="editor" form="verb-short">dir. par&#160; </term>
-      <term name="editor" form="verb">dirigé par&#160; </term>
+      <term name="editor" form="verb-short">sous dir. </term>
+      <term name="editor" form="verb">dirigé par </term>
       <term name="collection-editor" form="short">(dir.)</term>
-      <term name="collection-editor" form="verb-short">dir. par  </term>
+      <term name="collection-editor" form="verb-short">sous dir.  </term>
       <term name="collection-editor" form="verb">dirigé par  </term>
       <term name="translator" form="short">(trad.)</term>
       <term name="translator" form="verb-short">trad. par&#160;</term>
@@ -143,10 +143,10 @@
   <!-- MACRO EDITEUR SCIENTIFIQUE APPELEE SEULEMENT PAR LA MACRO TITLE, type : chapitres d'ouvrage -->
   <macro name="editor">
     <names variable="editor">
+      <label form="verb-short" prefix=" "/>
       <name form="long" and="text" delimiter-precedes-last="never" sort-separator=" ">
         <name-part name="family" font-variant="small-caps"/>
       </name>
-      <label form="short" prefix=" "/>
     </names>
   </macro>
   <!-- MACRO TRANSLATOR (POUR LES NDBP ET LA BIBLIO)-->
@@ -214,10 +214,9 @@
       <!-- AFFICHAGE TITRE DES ACTES POUR ARTICLE COLLOQUE-->
       <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
         <group>
-          <text variable="title" text-case="capitalize-first" prefix="«&#160;" suffix="&#160;»,"/>
-          <text value="in" font-style="italic" suffix=" " prefix=" "/>
-          <text macro="editor" suffix=", "/>
-          <text variable="container-title" text-case="capitalize-first" font-style="italic"/>
+          <text variable="title" text-case="capitalize-first" prefix="«&#160;" suffix="&#160;», "/>
+          <text variable="container-title" text-case="capitalize-first" font-style="italic" suffix=", "/>
+          <text macro="editor" />
         </group>
       </else-if>
       <else>
