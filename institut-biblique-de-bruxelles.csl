@@ -9,7 +9,7 @@
     <author>
       <name>Benjamin N.</name>
     </author>
-    <updated>2025-05-06T00:03:00+00:00</updated>
+    <updated>2025-05-08T00:01:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="fr">
@@ -188,17 +188,10 @@
       </else-if>
       <else-if type="bill book legal_case song" match="any">
         <text variable="title" text-case="capitalize-first" font-style="italic"/>
-        <choose>
-          <if is-numeric="volume">
-            <group>
-              <text value="vol." prefix=", " suffix="&#160;"/>
-              <text variable="volume"/>
-            </group>
-          </if>
-          <else>
-            <text variable="volume"/>
-          </else>
-        </choose>
+        <group>
+          <text value="vol." prefix=", " suffix="&#160;"/>
+          <text variable="volume"/>
+        </group>
       </else-if>
       <!-- AJOUT DES TYPES PAGES WEB ET BILLETS DE BLOG POUR AFFICHAGE DE LEUR TITRE ET DU TITRE DE LEUR CONTAINER-->
       <else-if type="article-journal article-newspaper article-magazine webpage post-weblog" match="any">
@@ -251,18 +244,11 @@
   <!-- MACRO DATE, VOLUME, PAGES PAR TYPE DE DOCT (POUR LES NDBP)-->
   <macro name="yearpage-ndbp">
     <choose>
-      <!-- <if type="bill book graphic legal_case motion_picture paper-conference manuscript report song thesis" match="any"> -->
       <if type="book motion_picture paper-conference manuscript report thesis" match="any">
         <group delimiter=", ">
           <date variable="issued">
             <date-part name="year"/>
           </date>
-          <!-- UTILISATION DU CHAMP VOLUME POUR AFFICHAGE DU NUMERO POUR LES NUMEROS SPECIAUX DE REVUES QUI UTILISENT LE TYPE "BOOK"-->
-          <group>
-            <text term="issue" form="short" suffix="&#160;"/>
-            <text variable="number-of-volumes" prefix=". " suffix="/"/>
-            <text variable="volume"/>
-          </group>
         </group>
       </if>
       <else-if type="chapter" match="any">
@@ -270,10 +256,6 @@
           <date variable="issued">
             <date-part name="year"/>
           </date>
-          <!-- <group delimiter="&#38;#160;"> -->
-          <!--   <label variable="page" form="short"/> -->
-          <!--   <text variable="page"/> -->
-          <!-- </group> -->
         </group>
       </else-if>
       <else-if type="entry-dictionary entry-encyclopedia" match="any">
