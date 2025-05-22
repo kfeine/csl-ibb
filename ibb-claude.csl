@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="note">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" page-range-format="expanded" default-locale="fr-FR">
     <info>
-        <title>Test Claude</title>
-        <id>http://www.zotero.org/styles/test-claude</id>
-        <link href="http://www.zotero.org/styles/test-claude" rel="self"/>
+        <title>Institut Biblique de Bruxelles (Français)</title>
+        <title-short>IBB</title-short>
+        <id>http://www.zotero.org/styles/institut-biblique-de-bruxelles</id>
+        <link href="http://www.zotero.org/styles/institut-biblique-de-bruxelles" rel="self"/>
         <author>
-            <name>Votre Nom</name>
+            <name>Benjmain N.</name>
         </author>
-        <category citation-format="note"/>
-        <category field="generic-base"/>
-        <summary>Un style CSL minimal conforme à la version 1.0 avec format spécifique pour la bibliographie</summary>
-        <updated>2025-05-21T12:00:00+00:00</updated>
+        <updated>2025-05-22T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -22,12 +20,15 @@
             </term>
             <term name="ibid">Ibid.</term>
             <term name="volume" form="short">vol.</term>
+            <term name="cited">op.&#160;cit.</term>
             <term name="issue" form="short">n°</term>
             <term name="page-range-delimiter">‑</term>
             <term name="in">in</term>
             <term name="collection">Collection</term>
             <term name="editor" form="verb-short">sous dir.</term>
             <term name="et-al">et al.</term>
+            <term name="translator" form="short">(trad.)</term>
+            <term name="translator" form="verb-short">trad. par&#160;</term>
         </terms>
     </locale>
 
@@ -282,7 +283,7 @@
                                 <text variable="title" font-style="italic" form="short"/>
                             </if>
                             <else>
-                                <text value="op. cit." font-style="italic"/>
+                                <text term="cited" font-style="italic"/>
                             </else>
                         </choose>
                         <text macro="locator-page"/>
