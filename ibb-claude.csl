@@ -27,7 +27,6 @@
             <term name="collection">Collection</term>
             <term name="editor" form="verb-short">sous dir.</term>
             <term name="et-al">et al.</term>
-            <term name="translator" form="short">(trad.)</term>
             <term name="translator" form="verb-short">trad. par&#160;</term>
         </terms>
     </locale>
@@ -91,6 +90,16 @@
         <names variable="editor">
             <label form="verb-short" suffix=" "/>
             <name form="long" initialize="false" et-al-min="4" et-al-use-first="1">
+                <name-part name="family" font-variant="small-caps"/>
+            </name>
+            <et-al font-style="italic"/>
+        </names>
+    </macro>
+
+    <macro name="translator">
+        <names variable="translator">
+            <label form="verb-short"/>
+            <name form="long" initialize="false" et-al-min="4" et-al-use-first="1" delimiter=" et ">
                 <name-part name="family" font-variant="small-caps"/>
             </name>
             <et-al font-style="italic"/>
@@ -297,6 +306,7 @@
                             <group delimiter=", ">
                                 <text macro="author-footnote"/>
                                 <text macro="title"/>
+                                <text macro="translator"/>
                                 <text macro="container-title"/>
                                 <text macro="full-date"/>
                                 <group delimiter=" ">
@@ -311,6 +321,7 @@
                             <group delimiter=", ">
                                 <text macro="author-footnote"/>
                                 <text macro="title"/>
+                                <text macro="translator"/>
                                 <text macro="container-title"/>
                                 <group>
                                     <text macro="volume"/>
@@ -325,6 +336,7 @@
                             <group delimiter=", ">
                                 <text macro="author-footnote"/>
                                 <text macro="title"/>
+                                <text macro="translator"/>
                                 <text macro="container-title"/>
                                 <text macro="editor"/>
                                 <text variable="collection-title" prefix="Collection "/>
@@ -339,6 +351,7 @@
                             <group delimiter=", ">
                                 <text macro="author-footnote"/>
                                 <text macro="title"/>
+                                <text macro="translator"/>
                                 <text macro="publisher"/>
                                 <text macro="publisher-name"/>
                                 <text macro="year-date"/>
@@ -365,6 +378,7 @@
                     <group delimiter=", ">
                         <text macro="author"/>
                         <text macro="title"/>
+                        <text macro="translator"/>
                         <text macro="container-title"/>
                         <text macro="full-date"/>
                         <group delimiter=" ">
@@ -378,6 +392,7 @@
                     <group delimiter=", ">
                         <text macro="author"/>
                         <text macro="title"/>
+                        <text macro="translator"/>
                         <text macro="container-title"/>
                         <group>
                             <text macro="volume"/>
@@ -392,6 +407,7 @@
                     <group delimiter=", ">
                         <text macro="author"/>
                         <text macro="title"/>
+                        <text macro="translator"/>
                         <text macro="container-title"/>
                         <text macro="editor"/>
                         <text variable="collection-title" prefix="Collection "/>
@@ -406,6 +422,7 @@
                     <group delimiter=", ">
                         <text macro="author"/>
                         <text macro="title"/>
+                        <text macro="translator"/>
                         <text macro="publisher"/>
                         <text macro="publisher-name"/>
                         <text macro="year-date"/>
