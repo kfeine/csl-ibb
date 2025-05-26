@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2025-05-22T12:00:00+00:00</updated>
+        <updated>2025-05-26T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -45,7 +45,14 @@
                     </name>
                     <et-al font-style="italic"/>
                 </names>
-                <text variable="title"/>
+                <choose>
+                    <if type="webpage post post-weblog" match="any">
+                        <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+                    </if>
+                    <else>
+                        <text variable="title"/>
+                    </else>
+                </choose>
             </substitute>
         </names>
     </macro>
@@ -63,7 +70,14 @@
                     </name>
                     <et-al font-style="italic"/>
                 </names>
-                <text variable="title"/>
+                <choose>
+                    <if type="webpage post post-weblog" match="any">
+                        <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+                    </if>
+                    <else>
+                        <text variable="title"/>
+                    </else>
+                </choose>
             </substitute>
         </names>
     </macro>
@@ -124,9 +138,6 @@
             <if variable="issued">
                 <date variable="issued" form="text"/>
             </if>
-            <else>
-                <text term="no date" form="short"/>
-            </else>
         </choose>
     </macro>
 
@@ -308,7 +319,11 @@
                                 <text macro="title"/>
                                 <text macro="translator"/>
                                 <text macro="container-title"/>
-                                <text macro="full-date"/>
+                                <choose>
+                                    <if variable="issued">
+                                        <text macro="full-date"/>
+                                    </if>
+                                </choose>
                                 <group delimiter=" ">
                                     <text macro="url"/>
                                     <text macro="access-date"/>
@@ -380,7 +395,11 @@
                         <text macro="title"/>
                         <text macro="translator"/>
                         <text macro="container-title"/>
-                        <text macro="full-date"/>
+                        <choose>
+                            <if variable="issued">
+                                <text macro="full-date"/>
+                            </if>
+                        </choose>
                         <group delimiter=" ">
                             <text macro="url"/>
                             <text macro="access-date"/>
