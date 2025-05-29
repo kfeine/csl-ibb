@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2025-05-26T12:00:00+00:00</updated>
+        <updated>2025-05-29T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -80,6 +80,17 @@
                 </choose>
             </substitute>
         </names>
+    </macro>
+
+    <macro name="book-volume">
+        <choose>
+            <if variable="volume">
+                <group delimiter="&#160;">
+                    <text term="volume" form="short"/>
+                    <text variable="volume"/>
+                </group>
+            </if>
+        </choose>
     </macro>
 
     <macro name="author-short">
@@ -366,6 +377,7 @@
                             <group delimiter=", ">
                                 <text macro="author-footnote"/>
                                 <text macro="title"/>
+                                <text macro="book-volume"/>
                                 <text macro="translator"/>
                                 <text macro="publisher"/>
                                 <text macro="publisher-name"/>
@@ -441,6 +453,7 @@
                     <group delimiter=", ">
                         <text macro="author"/>
                         <text macro="title"/>
+                        <text macro="book-volume"/>
                         <text macro="translator"/>
                         <text macro="publisher"/>
                         <text macro="publisher-name"/>
