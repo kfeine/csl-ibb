@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2025-05-29T12:00:00+00:00</updated>
+        <updated>2025-06-25T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -49,8 +49,11 @@
                     <if type="webpage post post-weblog" match="any">
                         <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
                     </if>
+                    <else-if type="article-journal article-magazine article-newspaper chapter entry-dictionary entry-encyclopedia" match="any">
+                        <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+                    </else-if>
                     <else>
-                        <text variable="title"/>
+                        <text variable="title" font-style="italic"/>
                     </else>
                 </choose>
             </substitute>
@@ -74,8 +77,11 @@
                     <if type="webpage post post-weblog" match="any">
                         <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
                     </if>
+                    <else-if type="article-journal article-magazine article-newspaper chapter entry-dictionary entry-encyclopedia" match="any">
+                        <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+                    </else-if>
                     <else>
-                        <text variable="title"/>
+                        <text variable="title" font-style="italic"/>
                     </else>
                 </choose>
             </substitute>
