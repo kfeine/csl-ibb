@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2025-06-25T12:00:00+00:00</updated>
+        <updated>2025-09-03T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -185,12 +185,15 @@
 
     <macro name="title">
         <choose>
-            <if type="article-journal article-magazine article-newspaper post-weblog chapter webpage post entry-dictionary entry-encyclopedia" match="any">
+            <if type="article-journal article-magazine article-newspaper post-weblog webpage post entry-dictionary entry-encyclopedia" match="any">
                 <group delimiter=", ">
-                <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+                    <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
                     <text macro="collection-volume"/>
                 </group>
             </if>
+            <else-if type="chapter">
+                <text variable="title" prefix="«&#160;" suffix="&#160;»"/>
+            </else-if>
             <else>
                 <group delimiter=", ">
                     <text variable="title" font-style="italic"/>
@@ -371,7 +374,8 @@
                                 <text macro="translator"/>
                                 <text macro="container-title"/>
                                 <text macro="editor"/>
-                                <text variable="collection-title" prefix="Collection "/>
+                                <!-- <text variable="collection-title" prefix="Collection "/> -->
+                                <text macro="collection-volume"/>
                                 <text macro="publisher"/>
                                 <text macro="publisher-name"/>
                                 <text macro="year-date"/>
