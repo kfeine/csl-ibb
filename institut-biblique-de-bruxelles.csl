@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2025-09-03T12:00:00+00:00</updated>
+        <updated>2025-10-13T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -28,6 +28,7 @@
             <term name="editor" form="verb-short">sous dir.</term>
             <term name="et-al">et al.</term>
             <term name="translator" form="verb-short">trad. par&#160;</term>
+            <term name="edition" form="short">éd.</term>
         </terms>
     </locale>
 
@@ -147,6 +148,17 @@
             <else>
                 <text term="no date" form="short"/>
             </else>
+        </choose>
+    </macro>
+
+    <macro name="edition">
+        <choose>
+            <if variable="edition">
+                <group delimiter="&#160;">
+                    <number variable="edition" form="ordinal"/>
+                    <text term="edition" form="short"/>
+                </group>
+            </if>
         </choose>
     </macro>
 
@@ -374,11 +386,11 @@
                                 <text macro="translator"/>
                                 <text macro="container-title"/>
                                 <text macro="editor"/>
-                                <!-- <text variable="collection-title" prefix="Collection "/> -->
                                 <text macro="collection-volume"/>
                                 <text macro="publisher"/>
                                 <text macro="publisher-name"/>
                                 <text macro="year-date"/>
+                                <text macro="edition"/>
                                 <text macro="locator-page"/>
                             </group>
                         </else-if>
@@ -392,6 +404,7 @@
                                 <text macro="publisher"/>
                                 <text macro="publisher-name"/>
                                 <text macro="year-date"/>
+                                <text macro="edition"/>
                                 <text macro="locator-page"/>
                             </group>
                         </else>
@@ -455,6 +468,7 @@
                         <text macro="publisher"/>
                         <text macro="publisher-name"/>
                         <text macro="year-date"/>
+                        <text macro="edition"/>
                         <text macro="pages"/>
                     </group>
                 </else-if>
@@ -468,6 +482,7 @@
                         <text macro="publisher"/>
                         <text macro="publisher-name"/>
                         <text macro="year-date"/>
+                        <text macro="edition"/>
                         <text macro="pages"/>
                     </group>
                 </else>
