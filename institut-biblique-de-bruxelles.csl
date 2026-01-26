@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2026-01-26T12:00:00+00:00</updated>
+        <updated>2026-01-24T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -366,10 +366,10 @@
                                 <text macro="title"/>
                                 <text macro="translator"/>
                                 <text macro="container-title"/>
-                                <group>
+                                <group delimiter=", ">
                                     <text macro="volume"/>
-                                    <text macro="issue" prefix=", "/>
-                                    <text macro="year-date" prefix=", "/>
+                                    <text macro="issue"/>
+                                    <text macro="year-date"/>
                                 </group>
                                 <text macro="locator-page"/>
                             </group>
@@ -444,11 +444,11 @@
                         <text macro="title"/>
                         <text macro="translator"/>
                         <text macro="container-title"/>
-                        <group>
+                        <group delimiter=", ">
                             <text macro="volume"/>
-                            <text macro="issue" prefix=", "/>
-                            <text macro="year-date" prefix=", "/>
-                            <text macro="pages" prefix=", "/>
+                            <text macro="issue"/>
+                            <text macro="year-date"/>
+                            <text macro="pages"/>
                         </group>
                     </group>
                 </else-if>
