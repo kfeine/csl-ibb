@@ -18,7 +18,7 @@
                 <single>p.</single>
                 <multiple>pp.</multiple>
             </term>
-            <term name="chapter" form="short">ch.&#160;</term>
+            <term name="chapter" form="short">ch.</term>
             <term name="ibid">Ibid.</term>
             <term name="volume" form="short">vol.</term>
             <term name="cited">op.&#160;cit.</term>
