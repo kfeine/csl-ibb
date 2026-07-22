@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2026-02-02T12:00:00+00:00</updated>
+        <updated>2026-07-22T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -18,6 +18,7 @@
                 <single>p.</single>
                 <multiple>pp.</multiple>
             </term>
+            <term name="chapter" form="short">ch.&#160;</term>
             <term name="ibid">Ibid.</term>
             <term name="volume" form="short">vol.</term>
             <term name="cited">op.&#160;cit.</term>
@@ -306,17 +307,10 @@
             <choose>
                 <!-- Si c'est une citation ibid avec la même page -->
                 <if position="ibid-with-locator" match="all">
-                    <choose>
-                        <if locator="page">
-                            <group delimiter=", ">
-                                <text term="ibid" font-style="italic"/>
-                                <text macro="locator-page"/>
-                            </group>
-                        </if>
-                        <else>
-                            <text term="ibid" font-style="italic"/>
-                        </else>
-                    </choose>
+                    <group delimiter=", ">
+                        <text term="ibid" font-style="italic"/>
+                        <text macro="locator-page"/>
+                    </group>
                 </if>
                 <!-- Si c'est une citation ibid simple -->
                 <else-if position="ibid" match="all">
