@@ -8,7 +8,7 @@
         <author>
             <name>Benjmain N.</name>
         </author>
-        <updated>2026-07-22T12:00:00+00:00</updated>
+        <updated>2026-07-23T12:00:00+00:00</updated>
         <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     </info>
     <locale xml:lang="fr">
@@ -408,8 +408,8 @@
     <bibliography hanging-indent="true" subsequent-author-substitute="&#8212;&#8212;&#8212;">
         <sort>
             <key macro="author"/>
-            <key macro="year-date"/>
             <key variable="title"/>
+            <key macro="year-date"/>
         </sort>
         <layout suffix=".">
             <choose>
